@@ -5,7 +5,9 @@ ruby "3.1.1"
 
 gem "bootsnap", require: false
 gem "devise"
+gem 'figaro'
 gem "foreman"
+gem 'http'
 gem "importmap-rails"
 gem "jbuilder"
 gem "pg", "~> 1.1"
