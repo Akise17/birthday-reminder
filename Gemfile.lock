@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/lynndylanhurley/devise_token_auth
+  revision: 798255ee7e3fee5cfa2fdc519fd90e281bd9b6f5
+  specs:
+    devise_token_auth (1.2.0)
+      bcrypt (~> 3.0)
+      devise (> 3.5.2, < 5)
+      rails (>= 4.2.0, < 7.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -296,6 +305,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  devise_token_auth (>= 1.2.0)!
   figaro
   foreman
   http

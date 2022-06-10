@@ -5,11 +5,11 @@ default: &default
 
 development:
   <<: *default
-  database: birthday-reminder-dev
-  host: localhost
-  username: dev
-  password: 1234
-  port: 6543
+  database: <%= ENV["DATABASE_NAME"] %>
+  host: <%= ENV["DATABASE_HOST"] %>
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  port: <%= ENV["DATABASE_PORT"] %>
 
 test:
   <<: *default
