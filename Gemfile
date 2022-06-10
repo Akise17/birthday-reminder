@@ -13,6 +13,7 @@ gem "importmap-rails"
 gem "jbuilder"
 gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
+gem 'rails_admin', '~> 3.0'
 gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 gem "sidekiq"
 gem "sidekiq-scheduler"
@@ -36,3 +37,4 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+gem "sassc-rails"
