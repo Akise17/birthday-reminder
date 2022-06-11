@@ -3,12 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.1"
 
+gem 'acts_as_paranoid'
 gem 'bootsnap', require: false
 gem 'coffee-rails', '~> 5.0.0'
 gem 'devise'
 gem 'devise_token_auth', '>= 1.2.0', git: 'https://github.com/lynndylanhurley/devise_token_auth'
 gem 'figaro'
 gem 'foreman'
+gem 'geocoder'
 gem 'http'
 gem 'importmap-rails'
 gem 'jbuilder'
@@ -22,6 +24,7 @@ gem 'sidekiq_monitor'
 gem 'sidekiq-scheduler'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
+gem 'timezone_finder'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
 
