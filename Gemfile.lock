@@ -1,4 +1,14 @@
 GIT
+  remote: https://github.com/Akise17/sidekiq_monitor
+  revision: af820cc757d0a3ce6f529bb696d9e535b849b640
+  specs:
+    sidekiq_monitor (0.1.7)
+      jquery-datatables-rails (>= 2.1.10.0.2)
+      rails-datatables
+      sidekiq (>= 2.2.1)
+      slim
+
+GIT
   remote: https://github.com/lynndylanhurley/devise_token_auth
   revision: 798255ee7e3fee5cfa2fdc519fd90e281bd9b6f5
   specs:
@@ -304,16 +314,16 @@ GEM
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
+    sidekiq-failures (1.0.1)
+      sidekiq (>= 4.0.0)
+    sidekiq-lock (0.5.0)
+      redis (>= 3.0.5)
+      sidekiq (>= 2.14.0)
     sidekiq-scheduler (4.0.1)
       redis (>= 4.2.0)
       rufus-scheduler (~> 3.2)
       sidekiq (>= 4)
       tilt (>= 1.4.0)
-    sidekiq_monitor (0.1.7)
-      jquery-datatables-rails (>= 2.1.10.0.2)
-      rails-datatables
-      sidekiq (>= 2.2.1)
-      slim
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -388,8 +398,10 @@ DEPENDENCIES
   sassc-rails
   selenium-webdriver
   sidekiq
+  sidekiq-failures
+  sidekiq-lock
   sidekiq-scheduler
-  sidekiq_monitor
+  sidekiq_monitor!
   sprockets-rails
   stimulus-rails
   timezone_finder

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   require 'sidekiq/web'
 
   # mount Sidekiq::Web => :sidekiq
+  mount Sidekiq::Monitor::Engine => '/sidekiq'
 
   namespace :v1 do
     resources :user

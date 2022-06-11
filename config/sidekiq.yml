@@ -1,0 +1,4 @@
+:schedule:
+  birthday_reminder:
+    cron: '0 * * * *'
+    class: Birthday::ReminderJob

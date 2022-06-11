@@ -3,7 +3,7 @@ class Hookbin
     @baseurl = baseurl
   end
 
-  def call(full_name)
-    HTTP.post(@baseurl, json: { 'message': "Hey, #{full_name} it’s your birthday" })
+  def call(message)
+    HTTP.post(@baseurl, json: { 'message': message })
   end
 end

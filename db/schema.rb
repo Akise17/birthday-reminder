@@ -10,23 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_11_034915) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_11_062843) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "active_admin_comments", force: :cascade do |t|
-    t.string "namespace"
-    t.text "body"
-    t.string "resource_type"
-    t.bigint "resource_id"
-    t.string "author_type"
-    t.bigint "author_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author"
-    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
-    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
-  end
 
   create_table "admins", force: :cascade do |t|
     t.string "provider", default: "email", null: false
@@ -90,6 +76,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_11_034915) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
+    t.string "country"
+    t.index ["birthday_date"], name: "index_users_on_birthday_date"
     t.index ["deleted_at"], name: "index_users_on_deleted_at"
   end
 

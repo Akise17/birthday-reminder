@@ -27,10 +27,10 @@ class V1::UserController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :birthday_date, :location)
+    params.require(:user).permit(:first_name, :last_name, :birthday_date, :location, :country)
   end
 
   def validate
-    return res(422, 'Location not found') unless location_valid?(params[:location])
+    return res(422, 'Location not found') unless location_valid?("#{params[:location]}, #{params[:country]}")
   end
 end
