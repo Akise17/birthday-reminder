@@ -30,23 +30,6 @@ notes:
 [Documentation](https://documenter.getpostman.com/view/1487291/Uz5NjDV9)
 
 
-## Running Tests
-
-To run tests you need to setup test database env
-
-```bash
-  RAILS_ENV=test rails db:migrate
-```
-```bash
-  RAILS_ENV=test rails db:seed
-```
-and run the following command
-
-```bash
-  rspec
-```
-
-
 ## Run Server
 
 Clone the project
@@ -96,3 +79,19 @@ To run this app using docker simply run this command
 ```
 
 Server running on port 3000
+
+## Running Tests
+
+To run tests you need to setup test database env
+
+```bash
+  RAILS_ENV=test rails db:migrate
+```
+```bash
+  RAILS_ENV=test rails db:seed
+```
+and run the following command
+
+```bash
+  rspec
+```
