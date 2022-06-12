@@ -47,7 +47,7 @@ and run the following command
 ```
 
 
-## Run Locally
+## Run Server
 
 Clone the project
 
@@ -61,7 +61,7 @@ Go to the project directory
   cd birthday-reminder
 ```
 
-Copy env file to root directory and rename to .env.{RAILS_ENV}
+Copy .env file to root directory
 
 #### Using Rails Server
 Migrate Database

@@ -6,7 +6,7 @@ require 'dotenv'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-Dotenv.load("env.#{Rails.env}")
+Dotenv.load
 
 module BirthdayReminder
   class Application < Rails::Application
