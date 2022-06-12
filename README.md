@@ -1,24 +1,98 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Birthday Reminder
 
-Things you may want to cover:
+Application to send a happy birthday message to users on their birthday at exactly 9am on their local time.
 
-* Ruby version
+# Description
+This application will check the user's birthday on this day every hour using Sidekiq Scheduler. If a user has a birthday, the application will run a Sidekiq job to check the location and get the user's local timezone. If the time is match, the application will run Sidekiq Job asynchronously to hit the Hookbin API.
 
-* System dependencies
+You can adjust birthday message and reminder time via admin dashboard on:
+ 
+http://localhost:3000/admin/setting
 
-* Configuration
+notes:
+| Parameter                  | Type     | Description                |
+| :------------------------- | :------- | :------------------------- |
+| `REMINDER_TIME`            | `int`    | Hour in 24 Hour format     |
+| `HOOKBIN_MESSAGE_TEMPLATE` | `text`   | Hookbin message template<br>{first_name}: User first name<br>{last_name}: User last name<br>{location}: User Location<br>{country}: User country   |
 
-* Database creation
+## Tech Stack
 
-* Database initialization
+- Ruby 3.1.1
+- Rails 7.0.3
+- Sidekiq
+- Postgresql
+- Redis
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Documentation
 
-* Deployment instructions
+[Documentation](https://documenter.getpostman.com/view/1487291/Uz5NjDV9)
 
-* ...
+
+## Running Tests
+
+To run tests you need to setup test database env
+
+```bash
+  RAILS_ENV=test rails db:migrate
+```
+```bash
+  RAILS_ENV=test rails db:seed
+```
+and run the following command
+
+```bash
+  rspec
+```
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone git@github.com:Akise17/birthday-reminder.git
+```
+
+Go to the project directory
+
+```bash
+  cd birthday-reminder
+```
+
+Copy env file to root directory and rename to .env.{RAILS_ENV}
+
+#### Using Rails Server
+Migrate Database
+
+```bash
+  rails db:migrate
+```
+```bash
+  rails db:seed
+```
+
+Install dependencies
+
+```bash
+  bundle install
+```
+
+Start the server
+
+```bash
+  foreman start
+```
+
+Server running on port 3000
+
+
+#### Using Docker
+To run this app using docker simply run this command
+
+```bash
+  docker-compose --env-file .env.production up --build -d
+```
+
+Server running on port 3000
