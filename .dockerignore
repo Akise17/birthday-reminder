@@ -1,0 +1,4 @@
+/config/application.yml
+/.byebug_history
+/log/*
+/tmp/*
