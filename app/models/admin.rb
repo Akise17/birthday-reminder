@@ -1,0 +1,12 @@
+# frozen_string_literal: true
+
+class Admin < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+  include DeviseTokenAuth::Concerns::User
+  rails_admin do
+    visible false
+  end
+end

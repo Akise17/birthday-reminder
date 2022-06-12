@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  postgres:
+    image: 'postgres:10.3-alpine'
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+    ports:
+      - '6543:5432'
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+
+  redis:
+    image: 'redis:4.0-alpine'
+    command: redis-server
+    volumes:
+      - 'redis:/data'
+    ports:
+      - '6380:6379'
+
+  web:
+    depends_on:
+      - 'postgres'
+      - 'redis'
+    build: .
+    image: akisearu17/birthday-reminder:latest
+    ports:
+      - '3000:3000'
+    volumes:
+      - 'web:/app/log'
+    environment:
+      RAILS_ENV: production
+
+volumes:
+  redis:
+  postgres:
+  web:

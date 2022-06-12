@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount_devise_token_auth_for 'Admin', at: 'auth'
+  require 'sidekiq/web'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # mount Sidekiq::Web => :sidekiq
+  mount Sidekiq::Monitor::Engine => '/sidekiq'
+
+  namespace :v1 do
+    resources :user
+  end
 end
