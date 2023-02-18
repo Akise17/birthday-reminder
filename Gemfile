@@ -14,6 +14,7 @@ gem 'puma', '~> 5.0'
 gem 'rack-cors'
 gem 'rails', '~> 7.0.4'
 gem 'redis', '~> 4.0'
+gem 'sidekiq'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
@@ -24,6 +25,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'byebug'
+  gem 'letter_opener_web'
   gem 'web-console'
 end
 

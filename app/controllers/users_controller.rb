@@ -1,21 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  def create
-    # Create new user object
-    user = User.new(user_params)
-
-    # return when record not saved
-    unless user.save
-      return render json: { message: user.errors.full_messages },
-                    status: :unprocessable_entity
-    end
-
-    # response if successfuly save
-    render json: { message: 'Create Success',
-                   user: }
-  end
-
   def update
     # find user by id
     user = User.find(params[:id])
