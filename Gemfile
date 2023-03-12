@@ -7,6 +7,7 @@ gem 'bootsnap', require: false
 gem 'devise'
 gem 'devise-jwt'
 gem 'figaro'
+gem 'httparty'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg', '~> 1.1'

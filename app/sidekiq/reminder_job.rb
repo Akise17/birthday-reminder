@@ -6,7 +6,8 @@ class ReminderJob
     users = User.where('EXTRACT(MONTH FROM birthday_date) = ?', DateTime.now.month)
                 .where('EXTRACT(DAY FROM birthday_date) = ?', DateTime.now.day)
     users.each do |user|
-      UserMailer.with(user:).happy_birthday.deliver_later
+      RequestBin.send_webhook(user.id)
+      sleep 0.1
     end
   end
 end
